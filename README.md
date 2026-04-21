@@ -29,7 +29,7 @@ $ pip install .
 Documentation
 ```sh
 $ cd pfio/docs
-$ make html
+$ uv run --extra doc make html
 $ open build/html/index.html
 ```
 
@@ -44,8 +44,8 @@ Check [the official document](https://packaging.python.org/tutorials/packaging-p
 Run tests locally:
 
 ```sh
-$ pip install tox
-$ tox
+$ uv sync
+$ uv run tox --skip-env doc
 ```
 
 Bump version numbers in `pfio/version.py` .
@@ -62,8 +62,7 @@ Build:
 
 ```sh
 $ rm -rf dist
-$ pip3 install --user build
-$ python3 -m build
+$ uv build
 ```
 
 Release to PyPI:
